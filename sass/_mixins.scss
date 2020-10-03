@@ -1,0 +1,7 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint <= 75em {
+    @media only screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}

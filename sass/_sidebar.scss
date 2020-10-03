@@ -1,0 +1,57 @@
+.sidebar {
+  background-color: $color-primary;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center;
+
+  @include respond($bg-large) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-btn {
+  border: none;
+  border-radius: none;
+  background-color: $color-white;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+  position: relative;
+
+  @include respond($bg-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-color: $color-white;
+    height: 2px;
+    width: 4.5rem;
+    position: absolute;
+  }
+
+  &::before {
+    top: -1.5rem;
+
+    @include respond($bg-large) {
+      top: 0;
+      transform: translateY(1.2rem);
+    }
+  }
+
+  &::after {
+    bottom: -1.5rem;
+
+    @include respond($bg-large) {
+      bottom: 0;
+      transform: translateY(-1rem);
+    }
+  }
+}
